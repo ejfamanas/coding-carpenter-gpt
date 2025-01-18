@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
-// This needs to be here for now
-dotenv.config()
-
+// This needs to be here for now, using closure
+// to make sure this gets run first by immediately invoking the function
+(() => dotenv.config())();
 export enum OpenAiEnv {
     OPENAI_API_KEY = "OPENAI_API_KEY",
     OPENAI_ORGANIZATION = "OPENAI_ORGANIZATION",
@@ -9,10 +9,6 @@ export enum OpenAiEnv {
 }
 
 export default class EnvLoader {
-    constructor() {
-
-    }
-
     public static get OPENAI_API_KEY(): string {
         return this.envVarLoader(OpenAiEnv.OPENAI_API_KEY);
     }

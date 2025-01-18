@@ -1,6 +1,5 @@
-import * as dotenv from "dotenv";
-import EnvLoader from "./utils/env-loader";
+import OpenAiTester from "./utils/openAi/open-ai-tester";
 
-console.log(EnvLoader.OPENAI_API_KEY);
-console.log(EnvLoader.OPENAI_ORGANIZATION);
-console.log(EnvLoader.OPENAI_PROJECT);
+const tester = new OpenAiTester();
+
+tester.testConnectivity();

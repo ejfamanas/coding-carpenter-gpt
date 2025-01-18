@@ -1,0 +1,31 @@
+{
+  "name": "coding-carpenter-gpt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejfamanas/coding-carpenter-gpt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejfamanas/coding-carpenter-gpt/issues"
+  },
+  "homepage": "https://github.com/ejfamanas/coding-carpenter-gpt#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "openai": "^4.79.1",
+    "ts-node": "^10.9.2"
+  }
+}

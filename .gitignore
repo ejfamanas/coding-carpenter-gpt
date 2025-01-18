@@ -1,2 +1,4 @@
 /gpt_env/
 /.env
+/dist/
+/node_modules/

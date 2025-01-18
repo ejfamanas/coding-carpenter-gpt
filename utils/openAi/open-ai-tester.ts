@@ -1,11 +1,12 @@
 import OpenAiLoader from "./open-ai-loader";
 
-export default class OpenAiTester extends OpenAiLoader {
+export default class OpenAiTester {
+    private readonly openAI = OpenAiLoader.OpenAI
     private readonly defaultModel = "gpt-4o-mini";
     public async testStreamConnectivity(model: string = this.defaultModel): Promise<string> {
         const arr: Array<string> = [];
         try {
-            const stream = await super.OpenAI.chat.completions.create({
+            const stream = await this.openAI.chat.completions.create({
                 model,
                 messages: [{role: "user", content: "Say this is a test"}],
                 stream: true,
@@ -22,7 +23,7 @@ export default class OpenAiTester extends OpenAiLoader {
     }
     public async testInteractivity(prompt: string, model: string = this.defaultModel) {
         try {
-            const response = await super.OpenAI.chat.completions.create({
+            const response = await this.openAI.chat.completions.create({
                 model,
                 messages: [
                     { role: "system", content: "You are a helpful assistant." },

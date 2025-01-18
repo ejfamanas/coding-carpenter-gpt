@@ -1,4 +1,6 @@
+import * as dotenv from "dotenv";
 import EnvLoader from "./utils/env-loader";
 
-const env = new EnvLoader();
-console.log(env.API_KEY)
+console.log(EnvLoader.OPENAI_API_KEY);
+console.log(EnvLoader.OPENAI_ORGANIZATION);
+console.log(EnvLoader.OPENAI_PROJECT);

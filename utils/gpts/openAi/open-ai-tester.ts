@@ -1,9 +1,10 @@
 import OpenAiLoader from "./open-ai-loader";
+import {AGeneralGpt} from "../models/general-gpt";
 
-export default class OpenAiTester {
+export default class OpenAiTester extends AGeneralGpt {
     private readonly openAI = OpenAiLoader.OpenAI
     private readonly defaultModel = "gpt-4o-mini";
-    public async testStreamConnectivity(model: string = this.defaultModel): Promise<string> {
+    public async generateText(model: string = this.defaultModel): Promise<string> {
         const arr: Array<string> = [];
         try {
             const stream = await this.openAI.chat.completions.create({

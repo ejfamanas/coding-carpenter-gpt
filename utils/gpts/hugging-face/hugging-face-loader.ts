@@ -1,4 +1,4 @@
-import EnvLoader from "../env-loader";
+import EnvLoader from "../../env-loader";
 
 export default class HuggingFaceLoader {
     public static get AUTH_HEADER() {

@@ -1,5 +1,5 @@
-import OpenAiTester from "./utils/openAi/open-ai-tester";
-import HuggingFaceTester from "./utils/hugging-face/hugging-face-tester";
+import OpenAiTester from "./utils/gpts/openAi/open-ai-tester";
+import HuggingFaceTester from "./utils/gpts/hugging-face/hugging-face-tester";
 
 const tester = new HuggingFaceTester();
 

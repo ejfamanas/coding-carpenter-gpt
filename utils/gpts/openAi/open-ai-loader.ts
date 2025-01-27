@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import EnvLoader from "../env-loader";
+import EnvLoader from "../../env-loader";
 
 export default class OpenAiLoader {
     public static get OpenAI(): OpenAI {

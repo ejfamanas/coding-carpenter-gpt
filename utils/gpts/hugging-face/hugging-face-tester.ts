@@ -1,8 +1,8 @@
 import HuggingFaceLoader from "./hugging-face-loader";
 import * as http from "axios";
-import {AGeneralGpt} from "../models/general-gpt";
+import {AGeneralGpt, IGeneralGpt} from "../models/general-gpt";
 
-export default class HuggingFaceTester extends AGeneralGpt {
+export default class HuggingFaceTester implements IGeneralGpt {
     private readonly headers = HuggingFaceLoader.AUTH_HEADER;
     private readonly FlanT5 = HuggingFaceLoader.FLANT5_URL;
     public async generateText(prompt: string): Promise<string> {

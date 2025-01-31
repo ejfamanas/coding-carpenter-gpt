@@ -1,15 +1,19 @@
 import OpenAiLoader from "./open-ai-loader";
-import {AGeneralGpt} from "../models/general-gpt";
+import {AGeneralGpt, IGeneralGpt} from "../models/general-gpt";
 
-export default class OpenAiTester extends AGeneralGpt {
+export default class OpenAiTester implements IGeneralGpt {
     private readonly openAI = OpenAiLoader.OpenAI
-    private readonly defaultModel = "gpt-4o-mini";
-    public async generateText(model: string = this.defaultModel): Promise<string> {
+    private readonly defaultModel = "gpt-4";
+    public async generateText(prompt: string, model: string = this.defaultModel): Promise<string> {
         const arr: Array<string> = [];
         try {
             const stream = await this.openAI.chat.completions.create({
-                model,
-                messages: [{role: "user", content: "Say this is a test"}],
+                model: "gpt-4o-mini", // Use GPT-4 model
+                messages: [
+                    { role: "system", content: prompt },
+                ],
+                max_tokens: 100, // Limit the response length
+                temperature: 0.7, // Control creativity
                 stream: true,
             });
 

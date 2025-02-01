@@ -19,7 +19,7 @@ export default class HuggingFaceTester implements IGeneralGpt {
             // @ts-ignore
             return Promise.resolve(response.data[0]?.generated_text || 'No output generated')
         } catch (e) {
-            console.log(`${Date.now()}: An error has occurred connecting to Hugging Face ${e}`);
+            console.log(`${Date.now()}: An error has occurred connecting to Hugging Face: ${e}`);
             return Promise.resolve("");
 
         }

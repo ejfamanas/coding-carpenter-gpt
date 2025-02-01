@@ -9,7 +9,8 @@ enum OpenAiEnv {
 }
 
 enum HuggingFaceEnv {
-    HUGGINGFACE_API_KEY = "HUGGINGFACE_API_KEY"
+    HUGGINGFACE_API_KEY = "HUGGINGFACE_API_KEY",
+    FLANT5_URL = "FLANT5_URL"
 }
 
 export default class EnvLoader {
@@ -27,6 +28,10 @@ export default class EnvLoader {
 
     public static get HUGGINGFACE_API_KEY(): string {
         return this.envVarLoader(HuggingFaceEnv.HUGGINGFACE_API_KEY)
+    }
+
+    public static get FLANT5_URL(): string {
+        return this.envVarLoader(HuggingFaceEnv.FLANT5_URL)
     }
 
     private static envVarLoader(str: OpenAiEnv | HuggingFaceEnv): string {

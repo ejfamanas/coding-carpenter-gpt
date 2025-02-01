@@ -8,7 +8,7 @@ export default class HuggingFaceLoader {
         }
     }
 
-    public static get FLANT5_URL() {
-        return "https://api-inference.huggingface.co/models/google/flan-t5-base";
+    public static get FLANT5_URL(): string {
+        return EnvLoader.FLANT5_URL;
     }
 }

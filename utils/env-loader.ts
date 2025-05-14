@@ -13,6 +13,11 @@ enum HuggingFaceEnv {
     FLANT5_URL = "FLANT5_URL"
 }
 
+enum NomiEnv {
+    NOMI_API_KEY = "NOMI_API_KEY",
+    NOMI_DEE_ID = "NOMI_DEE_ID"
+}
+
 export default class EnvLoader {
     public static get OPENAI_API_KEY(): string {
         return this.envVarLoader(OpenAiEnv.OPENAI_API_KEY);
@@ -27,14 +32,22 @@ export default class EnvLoader {
     }
 
     public static get HUGGINGFACE_API_KEY(): string {
-        return this.envVarLoader(HuggingFaceEnv.HUGGINGFACE_API_KEY)
+        return this.envVarLoader(HuggingFaceEnv.HUGGINGFACE_API_KEY);
     }
 
     public static get FLANT5_URL(): string {
-        return this.envVarLoader(HuggingFaceEnv.FLANT5_URL)
+        return this.envVarLoader(HuggingFaceEnv.FLANT5_URL);
     }
 
-    private static envVarLoader(str: OpenAiEnv | HuggingFaceEnv): string {
+    public static get NOMI_API_KEY(): string {
+        return this.envVarLoader(NomiEnv.NOMI_API_KEY);
+    }
+
+    public static get NOMI_DEE_ID(): string {
+        return this.envVarLoader(NomiEnv.NOMI_DEE_ID);
+    }
+
+    private static envVarLoader(str: OpenAiEnv | HuggingFaceEnv | NomiEnv): string {
         const envVar = process.env[str];
         if (!envVar) {
             this.missingVarError(str)

@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
+// @ts-ignore
 app.post("/api/gpt", async (req, res) => {
     const { prompt } = req.body;
 
